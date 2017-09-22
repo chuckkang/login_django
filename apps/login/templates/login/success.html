@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 {% load static %}
+	<link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+	<script src="{% static 'login/js/js.js' %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<div id="wrapper">
+		Success Page:<br>
+		WELCOME {{user.first_name}} {{user.last_name}}<br>
+
+		<confirmation>
+		{% if messages %}
+			{% for message in messages %}
+				{{message}}
+			{% endfor %}
+		{% endif %}
+		</confirmation>
+	</div>
+	<p align="center"><a href="logout">LOG OUT</a></p>
+</body>
+
+<style>
+	confirmation{
+		color:green;
+	}
+</style>
+</html>
